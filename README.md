@@ -41,7 +41,7 @@
 3. 위 1번 `a` 속성 `href`값으로 `#` 먼저 작성 후 위 2번 이름 작성하기
 4. 위 3번 결과 예시) id가 abcd일 경우 `<a href="#abcd"></a>
 ### 링크 복습
-* 임시링크<a href="#"></a> -> 의미 : 연결페이지 제작 전 일 경우
-* 바로가기 링크<a href="#header"></a> -> 의미 : 같은 파일 내 다른 위치 이동
-* 상대경로 이동<a href="./basic/index.html"></a> 
-* 특정 아이디 위치로 이동 (상대경로+바로가기 링크)<a href="./basic/index.html#main"></a>
+* 임시링크 `<a href="#"></a>` -> 의미 : 연결페이지 제작 전 일 경우
+* 바로가기 링크 `<a href="#header"></a>` -> 의미 : 같은 파일 내 다른 위치 이동
+* 상대경로 이동 `<a href="./basic/index.html"></a>` 
+* 특정 아이디 위치로 이동 (상대경로+바로가기 링크) `<a href="./basic/index.html#main"></a>`
