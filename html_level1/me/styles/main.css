@@ -1,0 +1,9 @@
+#mobile_wrap {background-color:#89BCBE;}
+#mobile_wrap .photo {}
+#mobile_wrap .photo img{}
+#mobile_wrap h1 {} /* br은 안써도됨 */
+#mobile_wrap h1 span {}
+#mobile_wrap h2 {}
+#mobile_wrap .git {} 
+#mobile_wrap .skill {}
+#mobile_wrap li {}

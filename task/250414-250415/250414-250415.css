@@ -1,1 +1,18 @@
-body {background-color: aquamarine;}
+body {background-color:#fff;}
+#weather {background-color: antiquewhite;}
+#weather h1 {}
+#weather .area {}
+#weather .temperature {}
+#weather p {}
+#weather .sub_title {}
+#weather .humidity {}
+#weather .dust {}
+.result {}
+#news {}
+#news > a {}
+#news .box {}
+#news .box a {}
+#news .box a h2 {}
+#news .box a p {}
+#news p {}
+#news p span {}
