@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부 스타일시트 연결한 HTML</title>
+    <!-- 내부스타일시트 작성시  <style></style> -->
+    <!-- 외부스타일시트 작성시 <link> -->
+    <link href="./styles/first.css" rel="stylesheet">
+</head>
+<body>
+    <div class="title">
+        <h1>외부스타일</h1>
+        <h2 class="cls" id="name" style="color: purple;">선택자 우선순위</h2>
+        <!-- inline(태그 안에 스타일을 작성하는 경우) > ID (순위가 높다) > Class > Tag -->
+        <!-- 자바스크립트에 CSS 명령시 inline 구조로 자동으로 삽입된다. 결과적으로 자바스크립트에서 명령한 CSS가 가장 우선순위가 높게 설정된다. -->
+    </div>
+</body>

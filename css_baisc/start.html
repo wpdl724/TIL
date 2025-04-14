@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 시작</title>
+    <style>
+        /* 내부 스타일 시트 작성 위치 */
+        /* html 내부에 작성하는 CSS는 해당 html파일에만 종속되서 외부 html에 연결할 수 없다. 이런 비효율적 문제때문에 실제론 외부스타일이 많이 사용된다. */
+        /* 기본 문법 */
+        /* 선택자 {속성:값; 속성:값;} */
+        /* color 글자색상, background-color 배경색상 */
+        h1 {color:red; background-color: yellow;}
+        p {color:#111; background-color: #eee;}
+        ul {background-color: aqua;}
+        p#group {background-color: lime;}
+        /* li.title {background-color: green;} */
+        .box>em {background-color: pink;}
+        /* 선택자 연습1. */
+        .wrap {}
+        .wrap h2 {}
+        .wrap p {}
+        .wrap p em {}
+        .wrap #contents {}
+        .wrap h3 {}
+        .wrap .details {}
+        /* 선택자 연습2. */
+        .all {} /* .div를 안쓰는 이유? class명이 있으니깐 */
+        .all .title {background-color:coral;}
+        .all .title h2 {}
+        .all .title p {}
+        .all .content {background-color:#ff0;}
+        .all .content h2 {}
+        .all .content p {}
+        .all .content .list {background-color:rgb(0,255,0);} /* class 이름이 있으면 먼저 쓰기 */
+        .all .content .list li {background-color:rgba(255,0,0,0.5);}
+        /* 선택자 연습3 */
+        #wrapper {}
+        #wrapper > h2 {}
+        #wrapper > h2 span {}
+        #wrapper p {}
+        #wrapper .container {}
+        #wrapper .container h2 {}
+        #wrapper .container .list {}
+        #wrapper .container .list li {}
+        #wrapper .container .list li span {}
+        #wrapper .container .list li em {}
+        #wrapper .container .define {}
+        #wrapper .container .define dt {}
+        #wrapper .container .define dd {}
+        /* 선택자 연습4 */
+        .main {}
+        .main p {}
+        .main h1 {}
+        .main h1~p {background-color:red; color:white;}
+        .main p+p {background-color: black; color:white}
+    </style>
+</head>
+<body>
+    <h1 class="title">CSS Style Sheet</h1>
+    <p id="group">CSS 작성 시 외부스타일, 내부스타일 작성방식이 있다. 내부 스타일은 &lt;head&gt; 태그 내에 &lt; style&gt; 태그로 작성하고 외부스타일은 별도의 CSS파일을 생성하여 &lt;link&gt;태그로 연결하는 방법이다</p>
+    <ul>
+        <li class="title">아이디는 CSS에서 #으로 표시한다.</li>
+        <li>태그는 CSS에서 꺽쇠없이 태그명만 표시한다.</li>
+    </ul>
+    <ul>
+        <li>디자인하는 대상이 정해졌을 때</li>
+        <li class="title">그 대상에 가장 가까운 태그의 태그명 또는 아이디, 클래스를 확인하고 선택자를 작성해야 한다.</li>
+    </ul>
+    <div class="box">
+        <em>자식 em</em>
+        <span>span 안 두번째 <em>자손 em</em>위치</span>
+        <hr> <!-- 선택자 (x) -->
+        <div class="wrap">
+            <h2>CSS</h2>
+            <p>CSS는 HTML을 꾸미는 <em>디자인</em>언어다.</p>
+            <p id="content">CSS는 HTML을 먼저 작성하고 CSS를 작성한다.</p>
+            <h3>내부스타일시트</h3>
+            <p>내부 스타일은 head 태그 안에 작성한다.</p>
+            <p class="details">내부스타일은 다른 HTML에 연결 할 수 없다.</p>
+        </div> 
+        <hr> <!-- 선택자 (x) -->
+        <div class="all">
+            <div class="title">
+                <h2>CSS</h2>
+                <p>작성방법</p>
+            </div>
+            <div class=" content">
+                <h2>주의사항</h2>
+                <p>속성 값 끝날때마다 세미콜론(;) 작성하기</p>
+                <ul class="list">
+                    <li>영문소문자로 클래스, 아이디 작성</li>
+                    <li>공백, 특수문자 불가</li>
+                </ul>
+            </div> 
+        </div>
+        <hr>
+        <div id="wrapper">
+            <h2>CSS 속성<span>색상</span></h2>
+            <p>CSS에서 작성 할 수 있는 색상 값의 종류</p>
+            <div class="container">
+                <h2>color, background-color</h2>
+                <ul class="list">
+                    <li><span>헥사코드</span></li>
+                    <li>#으로 시작하는 6자리 RGB코드 <em>#ffff00</em></li>
+                    <li>6자리 모두 같은 글자 반복시 3자리로 줄여쓰기 가능</li>
+                </ul>
+                <dl class="define">
+                    <dt>RGBA</dt>
+                    <dd>rgb와 alpha(A) 투명도를 함게 쓸수 있는 코드</dd>
+                    <dd>A는 0~1까지의 값만 작성한다. 1은 100%와 같다.</dd>
+                    <dd>rgba(255,0,0,0.2)란 빨강색 20% 투명도를 뜻한다.</dd>
+                </dl>
+            </div>
+        </div>
+        <hr>
+        <div class="main">
+            <p>선택자</p>
+            <h1>태그, 아이디, 클래스 선택자</h1>
+            <p>태그와 아이디 또는 클래스가 함께 있을 경우는 아이디, 클래스를 선택자를 먼저 작성한다.</p>
+            <h1>자식, 자손 선택자</h1>
+            <p>특정 부모 요소에 자식, 자손 태그가 중복 되어있을 경우만 &gt;표시를 사용해 자식을 구분한다.
+            <h1>형제 선택자</h1>
+            <p>인접한 형제는 + 기호를 사용한다.</p>
+            <p>모든 형제는 ~ 기호를 사용한다.</p>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
