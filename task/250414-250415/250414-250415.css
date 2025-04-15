@@ -7,7 +7,7 @@ body {background-color:#ffffff;}
 #weather .sub_title {background-color: burlywood;}
 #weather .humidity {color:rgb(0, 98, 255);}
 #weather .dust {color: rgb(0, 0, 0);}
-.result {color: black;}
+#weather .result {color: black;}
 #news {background-color: rgb(255, 233, 166);}
 #news > a {color: rgb(2, 136, 67);}
 #news .box {color:rgb(255, 255, 255);}
