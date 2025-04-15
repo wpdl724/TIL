@@ -1,9 +1,72 @@
-#mobile_wrap {background-color:#89BCBE;}
-#mobile_wrap .photo {}
-#mobile_wrap .photo img{}
-#mobile_wrap h1 {} /* br은 안써도됨 */
-#mobile_wrap h1 span {}
-#mobile_wrap h2 {}
-#mobile_wrap .git {} 
-#mobile_wrap .skill {}
-#mobile_wrap li {}
+#mobile_wrap {
+    background-color:#89BCBE; /* mobile_wrap */
+    width:440px; height:956px; /* mobile_wrap */
+    text-align:center; /* 자식, 자손 정렬 */
+    font-family: 'pretendard', sans-serif; /* 자식, 자손 글꼴 통일 */
+}
+#mobile_wrap .photo {
+    margin-top:117px; /* 마진에서 선 테두리값 빼기-> 계산법???  */
+    margin-bottom:60px;
+    display:inline-block;
+}
+#mobile_wrap .photo img {} /* 안써도 되면 선택자 그대로 놔둬도 된다. */
+#mobile_wrap h1 {
+    /* 글꼴 부모 상속 상태 */
+    font-size:25px; 
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02rem;
+    margin-bottom:50px; 
+    color:#000;
+} /* br은 안써도됨*/
+#mobile_wrap h1 span {
+    /* 글꼴,행간,자간 상속상태 */
+    font-weight: 700;
+    font-size:2.18rem;
+    color: #fff;
+}
+#mobile_wrap h2 {
+    line-height: 1.8;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #fff;
+    width: 193px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+    /* display:inline-block; */
+}
+#mobile_wrap .git {
+    line-height: 1.8;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #fff;
+    width: 193px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+    /* display:inline-block; */
+} 
+#mobile_wrap .skill_title {
+    color: #000000;
+}
+#mobile_wrap .skill {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    width: 193px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+}
+#mobile_wrap .skill li {
+    width: 193px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left; 
+    line-height: 20px;
+    /* display:inline-block; */
+}

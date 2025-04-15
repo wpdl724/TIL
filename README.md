@@ -45,3 +45,6 @@
 * 바로가기 링크 `<a href="#header"></a>` -> 의미 : 같은 파일 내 다른 위치 이동
 * 상대경로 이동 `<a href="./basic/index.html"></a>` 
 * 특정 아이디 위치로 이동 (상대경로+바로가기 링크) `<a href="./basic/index.html#main"></a>`
+### 자주 쓰는 글꼴 주소
+1. Pretendard -> `<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />`
+2. Noto Sans KR -> `<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">`
