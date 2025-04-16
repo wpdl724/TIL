@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 입력, 선택 컨트롤 양식 폼</title>
+    <style>
+        legend {display:none;} /* reset.css 모든 HTML적용 초기화 기준 */
+    </style>
+</head>
+<body>
+    <!-- 사용자 입력, 선택 컨트롤 묶음 틀로 form 작성 -->
+    <!-- action 사용자가 입력, 선택한 데이터를 전송하는 서버 -->
+    <!-- method 데이터 전송 시 전송방법 get or post -->
+    <form action="#" method="post" id="join_frm">
+        <!-- fieldset 전체 폼 태그 안 그룹이 필요할 경우 작성 -->
+        <!-- legend 그룹의 제목(데이터 구분 목적, 실제 디자인 숨김) -->
+        <fieldset>
+            <legend>아이디, 비밀번호, 이메일 입력양식</legend>
+            <span>리뷰 작성</span>
+            <textarea name="user_review" rows="5" cols="50" placeholder="100글자 이상 작성하셔야 리뷰 등록됩니다."></textarea><br>
+            <span>받는 사람 :</span>
+            <input type="text" multiple name="receiving"><br>
+            <span>사진 첨부 :</span>
+            <input type="file" name="user_photo" accept="image/*"><br>
+            <span>아이디 :</span>
+            <input type="text" placeholder="아이디 8~12글자 제한" name="user_id" required maxlength="10" size="10" size="5" autocomplete="on">
+            <button type="submit">아이디 중복 확인 </button><br>
+            <span>비밀번호 :</span><input type="password" name="user_pw"><br>
+            <span>주민번호 :</span>
+            <input type="text" name="resident_first" maxlength="6">-
+            <input type="password" name="resident_last" maxlength="1"><br>
+            <sapn>주문수량 :</sapn>
+            <input type="number" name="oredr_num" value="1"><br>
+            <input type="email">
+            <input type="search">
+            <input type="date">
+            <input type="time">
+            <input type="url">
+        </fieldset>
+        <fieldset>
+            <legend>개인정보 입력 및 선택양식</legend>
+            <dl>
+                <dt>성별</dt>
+                <dd>
+                    <label for="male">남</label>
+                    <input type="radio" name="gender" value="male" id="male">
+                    <label for="female">여</label>
+                    <input type="radio" name="gender" value="female" id="female">
+                    <label for="none">선택 안함</label>
+                    <input type="radio" name="gender" value="none" id="none">
+                </dd>
+                <dt>선호직업</dt>
+                <dd>아래 항목 중 하나만 선택하세요</dd>
+                <dd>
+                    <label> <!-- 부모일때는 선택이다 ('for' 쓰는거 말하는 거임) -->
+                        <span>웹디자이너</span> 
+                        <input type="radio" name="job" value="web_designer">
+                    </label>
+                    <label>
+                        <span>웹퍼블리셔</span> 
+                        <input type="radio" name="job" value="web_publisher">
+                    </label>
+                    <label>
+                        <span>프론트엔드개발자</span>
+                        <input type="radio" name="job" value="frontend_developer">
+                    </label>
+                </dd>
+                <dt>CSS 문제. 우선순위가 클래스보다 높은 것을 선택하세요.</dt><!--  css 문제 -->
+                <dd>아래 항목 중 정답에 해당하는 2개 이상을 선택하세요.</dd>
+                <dd>
+                    <label>
+                        <span>tag</span>
+                        <input type="checkbox" name="css_q" value="tag_false">
+                    </label>
+                    <label>
+                        <span>class</span>
+                        <input type="checkbox" name="css_q" value="class_false">
+                    </label>
+                    <label>
+                        <span>id</span> <!-- 정답 -->
+                        <input type="checkbox" name="css_q" value="id_positive">
+                    </label>
+                    <label>
+                        <span>inline</span> <!-- 정답 -->
+                        <input type="checkbox" name="css_q" value="inline_positive">
+                    </label>
+                    <label>
+                        <span>style</span>
+                        <input type="checkbox" name="css_q" value="style_false">
+                    </label>
+                </dd>
+            </dl>
+        </fieldset>
+        <fieldset>
+            <legend>휴대폰 인증번호 양식</legend> 
+        </fieldset>
+        <fieldset>
+            <legend>인증 약관 동의양식</legend>
+            <button type="button" id="certified_btn">인증요청</button>
+            <button type="button" id="id_overlap_btn">아이디 중복확인</button>
+            <button type="button" id="address_btn">주소검색</button>
+            <button type="button" id="cart_btn">장바구니</button>
+            <button type="button" id="review_btn">리뷰등록</button>
+        </fieldset>
+    </form>
+</body>
+</html>
