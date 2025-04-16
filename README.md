@@ -62,14 +62,14 @@
 * 레이아웃 관련 요소에 `width, height` 속성 작성 시 영역 확인을 위한 `background-color`를 꼭 함께 작성해서 정확히 구분한다. 이때 색상은 쉬운 영역 구분을 위한 `aqua, lime, yellow, pink` 등의 밝은 색상 위주로 사용한다. 영역 확인과 디자인 작업을 모두 마친 후 위 색상은 제거로 마무리 해야한다.
 * 실제 디자인에 들어가는 색상은 **rgba 또는 헥사코드**로 입력하고 테스트용으로 입력하는 임시 색상은 영문명으로 입력해야 한다.
 ### 자주 이용하는 CSS 속성 값과 기본값 
-* `letter-sapcing`자간 설정  | 기본값 0 | 사용 예시 letter-spacing : -0.02rem;
-* `line-height` 행간 | 1 또는 100% | line-height :1.5;
-* `font-size` 글자 크기 | 16px (1em)| font-size : 1.2rem;
-* `color` 글자색상 | |color #f00 color :rgba(0,0,0,0.5);
-* `background-color` 배경색상 | | background-color :#000;
-* `width` 가로 크기 | |width : 100px;
-* `height` 세로 크기 | |height :200px;
-* `margin` 바깥쪽여백 | |margin-top : 50px;
-* `border-radius` 모서리 둥글기| |border-radius : 10px;
-* `font-weight` 글자 굵기 | | font-weight: 400
-* `font-family` 글꼴 설정 | |font-family :'대표글꼴', '보조글꼴', sans-serif;
+* `letter-sapcing`자간 설정  | 기본값 0 | 사용 예시 `letter-spacing : -0.02rem;`
+* `line-height` 행간 | 1 또는 100% | `line-height :1.5;`
+* `font-size` 글자 크기 | 16px (1em)| `font-size : 1.2rem;`
+* `color` 글자색상 | |`color #f00 color :rgba(0,0,0,0.5);`
+* `background-color` 배경색상 | | `background-color :#000;`
+* `width` 가로 크기 | |`width : 100px;`
+* `height` 세로 크기 | |`height :200px;`
+* `margin` 바깥쪽여백 | |`margin-top : 50px;`
+* `border-radius` 모서리 둥글기| |`border-radius : 10px;`
+* `font-weight` 글자 굵기 | | `font-weight: 400`
+* `font-family` 글꼴 설정 | |`font-family :'대표글꼴', '보조글꼴', sans-serif;`

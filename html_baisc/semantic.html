@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HTML5 시멘틱 태그란 레이아웃태그를 더욱 의미있게 사용하기 위한 공통 단어들을 태그 형태로 만들어준 태그 모음을 뜻한다. div와 적절히 의미있게 조합하여 활용 할 수 있어야 한다.">
+    <meta name="keywords" content="시멘틱태그, 의미론적인, 레이아웃">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 태그 기초공부</title>
+    <style>
+        /* 내부 스타일시트 */
+        #wrap {}
+        #wrap header {}
+        #wrap header nav {}
+        #wrap main {}
+        #wrap main #left_wrap {}
+        #wrap main #left_wrap .ad {}
+        #wrap main #left_wrap .news {}
+        #wrap main #left_wrap .shopping {}
+        #wrap main aside {}
+        #wrap main aside .login {}   
+        #wrap main aside .ad1 {}
+        #wrap main aside .ad2 {}
+        #wrap main aside .shopping {}
+        #wrap main aside .weather {}
+        #wrap footer {}
+    </style>
+</head>
+<body>
+    <div id="Wrap"> <!-- 전체 묶음 -->
+        <header> <!-- 로고, 메뉴 등을 묶는 상단 레이아웃 (semantic) -->
+            <nav> <!-- gnb 주요 내비게이션을 묶는 레이아웃 (semantic) -->
+            </nav>
+        </header>
+        <main> <!-- header와 footer사이 주 내용 전체 레이아웃 (semantic) -->
+            <div id="left_wrap"> <!-- 왼쪽 전체 그룹 -->
+                <section class="ad"></section>
+                <section class="news"></section>
+                <section class="shopping"></section>
+            </div>
+            <aside> <!-- 오른쪽 전체 사이드 그룹 (semantic) -->
+                <section class="login"></section>
+                <section class="ad1"></section>
+                <section class="ad2"></section>
+                <section class="shopping"></section>
+                <section class="weather"></section>
+            </aside>
+        </main>
+        <footer><!-- 회사소개, 고객센터, 연락처 등 묶는 하단 레이아웃 (semantic) --></footer>
+    </div>
+</body>
+</html>
