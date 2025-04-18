@@ -1,20 +1,24 @@
 #wrap {
     background-color: #8174A0;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    padding:0 15px;
     width:440px; height:956px; 
     text-align:left;
 }
 #wrap h1 {
-    padding-top:148px;
-    margin-bottom: 15px;
+    /* padding-top:148px; */
+    padding:148px 0 0 0;
+    /* margin-bottom: 15px; */
+    margin:0 0 15px 0;
     font-size: 2.5rem; /* 40px 이다 */
     font-weight: 700; /* bold  이다 */
     color:#F5F7FA;
 }
 #wrap > p {} /* #wrap 모든 자식 p ->wlecombaack!~ , don't have on~ 부분이다 */
 #wrap h1+p {
-    margin-bottom: 121px;
+    /* margin-bottom: 121px; */
+    margin:0 0 121px 0;
     font-size: 1rem;
     color: #F5F7FA;
 }
@@ -24,17 +28,20 @@
     color:#17153B;
     font-weight: 600;
     font-size: 1.375rem; /* 22px 이다 */
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    margin:0 0 15px 0;
 }
 #wrap #login_frm p {
 
 
 }
 #wrap #login_frm p.user_in {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+    margin:0 0 40px 0;
 }
 #wrap #login_frm p.user_btn {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    margin:0 0 15px 0;
 }
 #wrap #login_frm p input::placeholder { /* "속성 쓰는 방법" placeholder 선택자 작성법*/
     font-size: 0.875rem;
@@ -43,10 +50,11 @@
 }  
 #wrap #login_frm p input {
     width: 410px;
-    padding-left: 20px;
+    /* padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 15px; */
+    padding:15px 20px 15px 20px;
     border:1px solid #2E236C;
     color: #17153B;
     background-color: #8174A0;
@@ -57,10 +65,11 @@
     background-color: #F5F7FA;
     color: #17153B;
     width: 410px; 
-    padding-left: 20px;
+    /* padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 15px; */
+    padding:15px 20px 15px 20px;
     border-radius: 10px;
     font-weight: 600; font-size: 0.87rem; 
 }
@@ -68,15 +77,17 @@
     background-color: #C8ACD6;
     color: #17153B;
     width: 410px; 
-    padding-left: 20px;
+    /* padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 15px; */
+    padding:15px 20px 15px 20px;
     border-radius: 10px;
     text-align: center;
     display: block; /* 인라인 */
     font-weight: 600; font-size: 0.87rem; 
-    margin-bottom: 94px;
+    /* margin-bottom: 94px; */
+    margin:0 0 94px 0;
 }
 #wrap #login_frm+p {
     font-size:0.75rem;

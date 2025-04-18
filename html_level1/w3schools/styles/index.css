@@ -11,18 +11,19 @@
 
 }
 #wrap h1 {
-    /* 위쪽 여백 값 */
-    /* 아래쪽 여백 값 */
-    padding-top:298px; /* margin 썼는데 이상하면 padding으로 적기 */
-    margin-bottom: 98px;
+    padding:311px 0 0;
+    /* padding-top:298px; margin 썼는데 이상하면 padding으로 적기 */ /* 위쪽 여백 값 */
+    /*margin-bottom: 98px;  아래쪽 여백 값 */
+    margin:0 0 82px 0;
 }
 #wrap h1 img {}
 #wrap #btn_wrap {
     width: 300px;
     /* 블록의 너비 값을 부모보다 작게 설정했을 때 블록을 가운데 정렬을 하고싶다면? */
-    margin-left:auto;
-    margin-right:auto;
-    text-align: left; /* btn_wrap의 인라인 자식, 자손 왼쪽정렬 */
+    /* margin-left:auto;
+    margin-right:auto; */
+    margin:0 auto;
+    text-align: left; /*btn_wrap의 인라인 자식, 자손 왼쪽정렬 */
 }
 #wrap #btn_wrap a {
     display:block; /* 블록의 너비는 부모 너비의 100%와 같다 */
@@ -41,8 +42,9 @@
 }
 #wrap #btn_wrap .sign_up_btn {
     height:40px; line-height:40px;
-    margin-top:16px;
-    margin-bottom:16px;
+    /* margin-top:16px;
+    margin-bottom:16px; */
+    margin:16px 0;
     background-color:#F5F7FA ; color: #17153B;
     border-radius:50px;
     font-size:0.875rem;

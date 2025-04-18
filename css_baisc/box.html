@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 CSS 연습</title>
+    <link href="./style/reset.css" rel="stylesheet">
+    <style>
+        .box1 {
+            background-color: aqua;
+            text-align: center;
+            /* height: 50px;  -> 부모의 높이 / 크기는 쓰지 않는다 -> 왜냐하면 선택하는 부분이 잘못선택될수도 있기 때문이다.*/ 
+        }
+        .box1 > * { /* 꺽새는 자식을 의미 *(별)은 "모든"을 의미한다. 그러므로, 자식을 모두선택한다 라는 뜻 */
+            font-size:3rem;
+            border:2px solid #000;
+            margin-left: -6px;
+        }  
+        .box1 h1 {
+            display: inline-block;
+        }
+        .box1 a { /* .box1의 a */
+            /*display: none; */ /* 요소의 위치, 크기 포함숨기기 */
+            width: 100px; height: 100px;
+            visibility: visible /* 동적 애니메이션 처리시 요소의 자리는 유지하고 숨겨야 하는 경우 주로 사용 */
+
+        }
+        .box1 +a { /* .box1의 형제 a (금요일 웹툰보기) */ /* 부모는 body 이다 */ /* 부모의 크기는 자식만큼 커진다. */
+            width: 50%; /* %는 부모기준 */
+            height: 100vh; /* 부모의 100%라는 의미이다. / 보이는 화면이 맞춰졌다.=> 즉, 보이는 화면 기준*/ 
+            background-color: chartreuse;
+            display: block;
+        }
+        ul {
+            background-color:orange;
+            padding-top: 10px;
+            padding-left: 10px;
+        } 
+        ul li {
+            background-color: plum;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        /* 형제와 형제요소 사이 여백 설정시 Margin */
+        /* 부모와 자식 요소 사이 여백 설정시 Padding */
+        .box2 {
+            background-color: aqua;
+            text-align: right;
+            padding:50px 100px 200px 0;
+            margin: 150px 0 0 0;
+        }
+        .box2 a {
+            border:3px dotted #f00;
+            font-size: 5rem;
+            display: inline-block;
+            /* padding: 50px; 상하좌우의 모든 값이 동일할때 값 1개 */
+            /* padding: 1px 2px 3px 4px 위, 오른쪽, 아래, 왼쪽의 값이 각각 다를 때  */
+            /*padding: 5px 10px;  /*상하/좌우 값 2개씩 같은경우 */
+            padding:5px 10px 0;  /*상/좌우/하 값 3개 나누기 */
+        }
+        </style>
+</head>
+<body>
+    <div class="box1">
+        <h1>h1</h1>
+        <a href="#">a</a>
+    </div>
+    <a href="#">금요일 웹툰 보기</a>
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+    </ul>
+    <div class="box2">
+        <a href="#">LINK</a>
+    </div>
+</body>
+</html>
