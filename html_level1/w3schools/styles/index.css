@@ -3,6 +3,8 @@
 /* 세로크기 */
 #wrap {
     background-color:#17153B;
+    padding-left: 15px;
+    padding-right: 15px;
     width:440px; 
     height:956px; 
     text-align:center; /* 수평 가운데 정렬 자식자손을 가운데 정렬 -> 인라인 요소이다. */
@@ -53,4 +55,5 @@
     margin-left: 15px;
     font-size: 0.75rem;
     display:inline;
+    
 }

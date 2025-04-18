@@ -5,9 +5,9 @@ header,footer,nav,aside,article,section,figure,figcaption,main,details,summary,
 form,fieldset,legend,input,button,select,option,textarea,
 em,strong,sub,sup,br,span,del,s,q,mark,code,img,a {
     margin:0; padding:0; box-sizing:border-box;
-    line-height:1; letter-spacing:0; word-spacing: 0;
+    line-height:1; letter-spacing: -0.02em; letter-spacing:0; word-spacing: 0;
     font-size:1em; font-weight:400; font-style:none;
-    color:#fff;
+    color:#000;
     font-family: 'pretendard', sans-serif;
 }
 /* 개별 태그 초기값 */
