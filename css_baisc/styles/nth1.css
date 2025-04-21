@@ -1,0 +1,31 @@
+/* nth1.css */
+table, tr, td {border:1px solid #000; border-collapse:collapse;}
+#t {width:300px; height:300px; } /* 한칸당 100opx로 설정, 3개 있으니깐 *3 해주기 */
+#t tbody {} 
+#t tbody tr {} 
+#t tbody tr td {} 
+/* #t tbody tr:nth-child(1) td:nth-child(1) {background-color: yellow;} */
+#t tbody tr:first-child td:first-child {background-color: rgb(241, 197, 181);} /* 막내는 last를 쓴다.  */
+#t tbody tr:nth-child(2) td:nth-child(2) {background-color:rgb(255, 197, 253);}
+#t tbody tr:last-child td:last-child {background-color:thistle}
+/* #t tbody tr:nth-child(3) td:nth-child(3) {background-color: chocolate;} */
+.box h2:nth-child(3) {background-color: cyan;}
+.box h2:nth-of-type(1) {color: red;}
+.box h2:first-of-type {font-weight: 800;}
+.box p:nth-child(5) {background-color: chocolate;} /* p요소의 다섯째 */
+.box p:nth-of-type(3) {color: chartreuse;} /* p요소 중에 세번째 */
+.box p:nth-child(5) {font-weight: 800;}
+.list {}
+.list li {
+    width: 50px; 
+    height:50px; 
+    border:1px solid #000;
+    display:inline-block; /* 옆으로 나열 + 크기도 적용될수 있게 inline-block 사용-> 인라인으로만하면 옆으로만 감./ 인라인블록으로 변경해야지 옆으로 나열 된다 */
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 50px; /* 수직중앙 정렬은 '높이'와 같은 값을 작성 */
+}
+/* .list li:nth-child(3) {background-color: darkslateblue;} 3의 배수로 색상이 적용된것을 볼수 있음 */
+/* .list li:nth-child(3n+2) {background-color: darkslateblue;} 2번부터 시작해서 3 간격으로 색상을 주겠다. */
+/* .list li:nth-child(odd) {background-color: darkslateblue;}  홀수 배수 */
+.list li:nth-child(even) {background-color: darkslateblue; color: coral;}  /* 짝수 배수 */

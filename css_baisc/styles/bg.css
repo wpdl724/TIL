@@ -1,0 +1,32 @@
+/* bg.css */
+.bg {/* 위 아래 사진을 동일하게 넣고 싶으면 (공통클래스).bg에다가 공통으로 넣으면 된다. */
+    width:1000px; height:1000px;
+    background-repeat: no-repeat;
+}
+.bg1 {
+    background:yellow url(https://i.pinimg.com/736x/ec/ae/c8/ecaec8af9e62557c9a1c7de0ec5a0c17.jpg) right center;
+    /* background-color: yellow; /* 이미지를 넣으면 백그라운드 색상은 안보이게 된다. */
+    /* background-image: url(https://i.pinimg.com/736x/ec/ae/c8/ecaec8af9e62557c9a1c7de0ec5a0c17.jpg);
+    /*background-position: center center; 이미지가 정가운데 위치 */
+    /* background-position: center top; x축 - 이미지가 상단에 위치 */
+    /* background-position: center bottom; y축 - 이미지가 하단 위치 */
+} */
+.bg2 {
+    background-color: aqua;
+    background-image: url(../images/test3.jpg);
+     /*background-position: 0 60%; /*픽셀은 왼쪽상단 기준 -> 왼쪽 left 100 상단 top 200 */
+     /* background-size:cover; */
+     /* background-position: -100px -200px; 음수를 쓰면 이미지가 밖으로 나감 */
+     /* background-repeat: repeat-x; */
+        background-size: 500px auto;
+        /* background:pink url(../images/test1.jpg) no-repeat 60%; */
+}
+.bg3 {
+    height: 3000px;
+    background-color: brown;
+    background-image:url(../images/test2.jpg) no-repeat fixed center 80%;
+    /*background-position: center 80%;
+    background-attachment: fixed;
+    background-size: cover; */
+    /*background: palevioletred url(../images/test2.jpg) no-repeat fixed center 80%  통합속성 */
+} 
