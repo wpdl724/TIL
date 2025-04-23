@@ -30,3 +30,33 @@
     background-size: cover; */
     /*background: palevioletred url(../images/test2.jpg) no-repeat fixed center 80%  통합속성 */
 } 
+/* sample->CSS */
+
+/* bg.css */
+.bg {
+    width:1000px; height:1000px;
+    background-repeat:no-repeat;
+}
+.bg1 {
+    background:yellow url(https://i.pinimg.com/236x/1a/04/c1/1a04c1fedc54c7dcd4bf796efc41891b.jpg) right center;
+    /* background-color:yellow;
+    background-image:url(https://i.pinimg.com/236x/1a/04/c1/1a04c1fedc54c7dcd4bf796efc41891b.jpg);
+    background-position:right center; */
+}
+.bg2 {
+    background:aqua url(../images/test2.jpg) no-repeat 0 60%;
+    /* background-color:aqua;
+    background-image:url(../images/test2.jpg);
+    background-position:0 60%; */
+    /* background-size:cover; */
+    background-size:500px auto;
+}
+.bg3 {
+    height:3000px;
+    background:coral url(https://i.pinimg.com/736x/b0/b2/99/b0b299bb7fa8a6a1615d8d223bb72cd1.jpg) no-repeat fixed center 80% / cover;
+    /* background-color:coral;
+    background-image:url(https://i.pinimg.com/736x/b0/b2/99/b0b299bb7fa8a6a1615d8d223bb72cd1.jpg);
+    background-position:center 80%;
+    background-attachment:fixed; */
+    /* background-size:cover; */
+}

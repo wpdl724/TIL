@@ -1,0 +1,23 @@
+/* float.css */
+.box {
+    background-color: lightgray;
+    width: 800px;
+    /*  height: 400px; */
+    margin:0 auto;
+    /* 자식 요소에 float가 들어갈 경우 부모의 높이가 0으로 사라질 수 있다 */
+    /* 해결법 1. 부모 높이 입력하기(디자인에서 높이가 고정된 경우만 주의해서 사용) */
+    /* 해결법 2. float로 인해 부유된 자식들의 영역을 재인식하는 css속성입력하기 */
+    overflow: hidden;
+}
+.box p {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 100px;
+    width:100px; height: 100px;
+    background-color: #000; color: #fff;
+}
+.box p:nth-child(1) {float:left;}
+.box p:nth-child(2) {float:left;}
+.box p:nth-child(3) {float:left;/* 이전 형제의 기능을 삭제해라 */} 
+.box p:nth-child(4) {float:right;} 
+/* .box p:nth-child(4) {float:none; clear:both;float가 방향상관없이 모든 방향으로 clear 제거해서 위치로 이동하겠다} */
