@@ -73,3 +73,12 @@
 * `border-radius` 모서리 둥글기| |`border-radius : 10px;`
 * `font-weight` 글자 굵기 | | `font-weight: 400`
 * `font-family` 글꼴 설정 | |`font-family :'대표글꼴', '보조글꼴', sans-serif;`
+## 위치속성 float
+* 블록, 인라인 요소를 좌(left), 우(right) 사용하는 위치 속성 
+* 좌/우 배치하고 싶은 요소가 형제인 경우 사용 
+* 형제가 3개 이상인 경우 1-> 2 옆으로 두고 3을 내리고 싶은 경우, 형제 3에게 `clear:both`를 선언하여 이전 형제의 float 정렬 제거하기
+### 오른쪽으로 보내고 싶은 형제 요소가 2기 이상이라면?
+* 2개를 묶어서 그룹으로 처리하고 `float:right` 한번만 작성한다.
+* `float:right`는 2번 이상 사용하면 역순이 되므로 **한번만 작성해야한다.**
+### float를 적용하느 형제의 부모 높이가 max-content(기본값)이라면?
+* 부모의 높이를 제대로 인식 못하므로 높이를 강제(px) 시키거나 `overflow:hidden` 높이를 안주고 영역 재인식을 시켜 float에 의한 오류를 제거해야 한다.
