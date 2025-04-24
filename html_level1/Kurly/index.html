@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | 마켓컬리</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="./styles/reset.css" rel="stylesheet">
+    <link href="./styles/index.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1><a href="#"><img src="#" alt="마켓컬리"></a></h1>
+        <div class="law">
+            <h2>인터넷 쇼핑몰 『 웹컬리 사이버 몰』회원 약관</h2>
+            <h3>제1조(목적)</h3>
+            <p>이 약관은 웹컬리 회사(전자상거래 사업자)가 운영하는 웹컬리 사이버 몰(이하 "몰"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리·의무및 책임사항을 규정함을 목적으로 합니다.</p>
+            <p>* 「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다</p>
+            <h3>제2조(정의)</h3>
+            <p>①"몰" 이란 웹컬리 회사가 재화 또는 용역(이하 "재화등"이라 함)을 이용자에게 제공하기 위하여 컴퓨터등 정보통신설비를 이용하여 재화등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.</p>
+            <p>②"이용자"란 "몰"에 접속하여 이 약관에 따라 "몰"이 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</p>
+        </div>
+        <form action="#" method="post" id="login_frm">
+            <dl class="member_info">
+                <dt>아이디<em>*</em></dt>
+                <dd><input type="text" name="user_id" placeholder="아이디를 입력해주세요"></dd>
+                <dd><button type="button" id="id_overlap_btn">중복확인</button></dd>
+                <dt>비밀번호<em>*</em></dt>
+                <dd><input type="password" name="user_pw" placeholder="비밀번호를 입력해주세요"></dd>
+                <dd><button type="button" id="pw_overlap_btn"></button></dd>
+                <dt>비밀번호 확인<em>*</em></dt>
+                <dd><input type="password" name="user_pw2" placeholder="비밀번호를 한번 더 입력해주세요"></dd>
+                <dd><button type="" id="pw2_overlap_btn"></button></dd>
+                <dt>이름<em>*</em></dt>
+                <dd><input type="text" name="user_name" placeholder="이름을 입력해주세요"></dd>
+                <dd><button type="button" id="name_overlap_btn"></button></dd>
+                <dt>이메일<em>*</em></dt>
+                <dd><input type="email" name="user_email" placeholder="예)abc@web.com"></dd>
+                <dd><button type="button" id="email_overlap_btn"></button>중복확인</dd>
+                <dt>휴대폰<em>*</em></dt>
+                <dd>
+                    <select>
+                        <option value="">KT</option>
+                        <input type="text" name="user_num" placeholder="숫자만 입력해주세요 예)01012345678">
+                    </select>
+                </dd>
+                <dd><button type="button" name="user_num_check" id="user_overlap_btn"></button>인증번호받기</dd>
+                <dt>주소 <em>*</em></dt>
+                <dd><button type="button" id="user_address"></button>주소검색</dd>
+                <span>배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+                <dd></dd>
+                <dt>성별</dt>
+                <dd>
+                    <input type="radio" name="gender" value="user_man" id="man"><label for="man">남자</label>
+                    <input type="radio" name="gender" value="user_woman" id="woman"><label for="woman">여자</label>
+                    <input type="radio" name="gender" value="user_none" id="none"><label for="none">선택안함</label>
+                </dd>
+                <dd></dd>
+                <dt>생년월일</dt>
+                <dd>
+                    <input type="number" name="user_birth_year" placeholder="YYY">
+                    <input type="number" name="user_birth_month" placeholder="MMM">
+                    <input type="number" name="user_birth_day" placeholder="DDD">
+                </dd>
+                <dd></dd>
+            </dl>
+            <div class="btn">
+                <button type="submit" id="user_join">가입하기</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

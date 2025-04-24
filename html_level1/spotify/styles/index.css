@@ -23,12 +23,12 @@ main section .tab_title a {
     float: left;
     text-transform: uppercase;
 }
-main section .tab_title .active a span {/* 활성화 a의 자식 span */
+main section .tab_title a span {/* 비활성화 a의 자식 span */
     display:inline-block;
     padding: 7px 0;
     color: #fff;
 }
-main section .tab_title a span {/* 비활성화된 a의 자식 span */
+main section .tab_title a.active span {/* 활성화된 a의 자식 span */
     border-bottom:2px solid #48f78b;
     color: #fff;
 } 
