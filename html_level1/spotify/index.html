@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | spotify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="./styles/reset.css" rel="stylesheet">
+    <link href="./styles/index.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1><a href="#"><img src="./styles/images/logo.png" alt="spotify"></a></h1>
+        <section>
+            <!-- 탭 제목 -->
+            <div class="tab_title">
+                <a href="#" class="sign_in active"><span>sign in</span></a>
+                <a href="#" class="sign_up"><span>sign up</span></a>
+            </div>
+            <!-- 탭 내용 -->
+            <div class="tab_container">
+                <!-- sign_in 클릭 시 열리는 내용 -->
+                <form action="#" method="post" id="login_frm">
+                    <div class="id_pw">
+                        <input type="text" name="user_name" placeholder="Username">
+                        <input type="text" name="user_pw" placeholder="Password">
+                    </div>
+                    <p class="login_stay">
+                        <input type="checkbox" value="user_stay_on" name="user_stay" id="user_stay_in">
+                        <label for="user_stay_in">stay signed in</label>
+                    </p>
+                    <div class="btn_search">
+                        <button type="submit" id="sign_in_btn">sign in</button>
+                        <a href="#" class="pw_search">Forgot Password?</a>
+                    </div>
+                </form>
+                <!-- sign_up 클릭 시 열리는 내용 -->
+                <form action="#" method="post" id="join_frm"></form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
