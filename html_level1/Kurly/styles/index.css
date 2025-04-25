@@ -1,0 +1,79 @@
+main {
+    width: 1000px;
+    background-color: #eee;
+    margin:0 auto;
+}
+main h1 {}
+main h1 a {}
+main h1 a  img {}
+/* ==========================가입약관 */
+main .law {
+    background-color: #fff;
+    width: 90%; height: 180px; margin: 30px auto; padding:16px; 
+    overflow: auto;
+    /* 부모 크기보다 자식이 클 경우 auto 자동으로 스크롤을 보이고 부모 크기보다 자식이 작거나 같다면 auto자동으로 스크롤을 숨기는 속성값 */
+    
+}
+main .law h2 {margin: 0 0 30px;}
+main .law h3 {margin: 0 0 15px;}
+main .law p {line-height: 1.5; margin: 20px 0;}
+/* ==========================가입정보입력 */
+main #login_frm {}
+main #login_frm  .member_info {
+    /* width: 1000px; */
+    overflow: hidden;
+}
+main #login_frm .member_info dt {
+    width: 200px;
+    background-color: lime;
+    float: left; clear: both;
+}
+main #login_frm .member_info dd {
+float:left
+}
+/* 사용자 입력, 선택 양식을 담은 두번째 dd 선택자 */
+/* main #login_frm .member_info dd:nth-of-type(odd) {background-color:yellow;} */
+main #login_frm .member_info dd:nth-of-type(2n+1) {
+    width: 600px;
+    background-color:yellow;
+}
+/* 중복확인, 인증번화 받기를 담은 세번째 dd 선택자 */
+/* main #login_frm .member_info dd:nth-of-type(even) {background-color:skyblue;} */
+main #login_frm .member_info dd:nth-of-type(2n) {
+    width: 200px;
+    background-color:skyblue;
+}
+/* =========나머지 자식, 자손 개별 선택자 */
+main #login_frm .member_info dt  {}
+main #login_frm .member_info dt em {}
+/* ==============================id, pw, name, email,phone 묶음속성 */
+main #login_frm .member_info dd input[name^=user] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%; padding: 12px;
+}
+/*==========================개별 속성 */
+main #login_frm .member_info dd input[name$=id] {}
+/* ===================오른쪽 중복확인 묶음 선택자 */
+main #login_frm .member_info dd:nth-of-type(2n) .btn {
+    background-color: red;
+    float: left;
+    }
+/* ======================휴대폰, 주소, 성별, 생년월일 선택자 */
+main #login_frm .member_info dd .select[name^=news] {}
+main #login_frm .member_info dd .select[name^=news] option {}
+main #login_frm .member_info dd .input[name*=phone] {}
+/* ===================인증번호 버튼 묶음 선택자 */
+main #login_frm .member_info dd #authentication_btn {background-color: red;}
+main #login_frm .member_info dd #address_search_btn {
+    
+}
+main #login_frm .member_info dd #address_search_btn + span {}
+main #login_frm .member_info dd input[name=gender] {}
+main #login_frm .member_info dd input[name=gender] + label {}
+main #login_frm .member_info dd input[name^=birthday] {
+}
+/* ==========================가입버튼 */
+main #login_frm .btn {}
+main #login_frm .btn #sign_up_btn {}    
