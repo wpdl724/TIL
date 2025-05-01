@@ -131,3 +131,12 @@
 * container(부모속성), item(자식속성)에 주는 속성이 다르기 때문에 주의해서 작성해야 합니다. **기본 시작은 부모부터 한다**
 * `display:flax`로 부모(container)대상에 display 명령어로 해당 레이아웃이 flex라는 선언부터 시작합니다.
 * (위) flex선언을 진행시 메인축은 기본값 수평, 교차축은 기본값 수직으로 정렬됩니다.
+## position 
+### 필수 속성 relative, absolute, fixed, sticky
+### 선택 속성 top, bottom, right, left
+* `flex, float` 등 포함 위치가 잡혀있는 요소에서 상/하/좌/우로 살짝 이동을 할때는 `positon:relative;`
+* 형제 요소 또는 부모-자식 요소 관계에서 부모 위치를 기준으로 요소를 겹치거나 현재 위치와는 관계없이 멀리 이동 할 경우는 `position:absolute;`
+* **주의사항** `absoulte`사용 시 부모들 중 별도의 position속성이 없다면 `body`를 기준으로 위치가 설정되는 부모 중 원하는 기준 대상에 반드시 position속성을 함께 작성해야 한다. `absoulte, relative, fixed, sticky` 모두 가능!(상황에 따라 조합하기)
+### emment 기능 (단축키)
+* `img 쓰고 tab`  자동완성이 나옴
+* 속성 값 

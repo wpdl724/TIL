@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울시청</title>
+    <style>
+        #wrap main .service_wrap.contents a {
+            display: block;
+        }
+        #wrap main .service_wrap.contents a:before {/* 포폴제작할때 이걸 사용 하면 좋음 -> 어렵긴하지만 쓰면 좋음 , 스프라이트이미지!! */
+        background-image: url(./images/icon_set_service.png);
+        background-size: auto 42px;
+        background-position-x: -120px;
+        content:''; display: block;
+        width: 50px; height: 50px; 
+        }
+        #wrap main .service_wrap.contents a h3 {}
+        /* 코로나 */
+        #wrap main .banner_wrap .right_group .corona {
+            background-image:url(./images/bg_corona.gif);
+            width: 360px; height: 230px;
+            position: relative;
+        }
+    
+        #wrap main .banner_wrap .right_group .corona p {
+            position: absolute;
+            border: 1px solid white;
+            color: #fff;
+        }
+        #wrap main .banner_wrap .right_group .corona p[title^=확] {
+            width: 140px; height: 13px; left: 30px; top: 84px;
+        }
+        #wrap main .banner_wrap .right_group .corona p[title^=추가확진] {
+            color: blue;
+        }
+        #wrap main .banner_wrap .right_group .corona p[title^=퇴] {}
+        #wrap main .banner_wrap .right_group .corona p[title^=추가퇴원] {}
+        #wrap main .banner_wrap .right_group .corona p[title^=사망] {}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="header_top">
+                <div class="left">
+                    <h1><a href="#"><img src="#" alt="서울시청"></a></h1>
+                    <a href="#">서울소식</a>
+                    <a href="#">시민참여</a>
+                    <a href="#">분야별정보</a>
+                    <a href="#">서울소개</a>
+                    <a href="#">부서안내</a>
+                    <a href="#">정보공개</a>
+                    <a href="#">응답소</a>
+                </div>
+                <div class="right">
+                    <a href="#">로그인</a>
+                    <a href="#">나의서울</a>
+                    <a href="#">전자우편</a>
+                </div>
+            </div>
+            <div class="header_bottom">
+                <h1><a href="#"><img src="#" alt="서울시청"></a></h1>
+                <form action="" method="get" id="search_frm">
+                    <input type="search" name="search_txt" id="search_txt" placeholder="검색어를 입력해주세요">
+                    <button type="submit" id="search_btn">검색</button>
+                </form>
+                <div class="lang">
+                    <select name="lang_select" id="lang_select">
+                        <option value="en">english</option>
+                        <option value="ko">korean</option>
+                    </select>
+                    <button type="button" id="lang_btn">GO</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="banner_wrap">
+                <div class="ad_container">
+                    <img src="./images/서울시청 사이트 제작자료/banner_main.jpg" alt="8월 16일부터 사회적 거리두기 2단계 격상됩니다. 외출자제, 마스크착용, 손씻기, 거리두기 2m 코로나 19를 멈추기 위해 우리도 잠시 멈춰요.">
+                    <a href="" class="close"><img src="#" alt="닫기"></a>
+                </div>
+                <div class="right_group">
+                    <div class="corona">
+                        <p title="확진자">1000</p>
+                        <p title="추가확진자">500</p>
+                        <p title="퇴원">500</p>
+                        <p title="추가 퇴원">500</p>
+                        <p title="사망">0</p>
+                    </div>
+                    <a href="#" class="traffic">
+                        <img src="./images/서울시청 사이트 제작자료/banner_traffic.gif" alt="교통안내">
+                    </a>
+            </div>
+            <div class="service_wrap">
+                <div class="title">
+                    <h2>주요서비스</h2>
+                    <a href="#" class="all_site">전체 사이트</a>
+                </div>
+                <div class="contents">
+                    <a href="#">
+                        <h3>응답소(민원신고)</h3>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

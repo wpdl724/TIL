@@ -1,0 +1,59 @@
+/* pst.css */
+html, body {
+    height: 300vh;
+}
+/* 공통 */
+.pst {
+    background-color: #eee;
+    padding: 20px;
+    margin: 20px;
+}
+.pst li {
+    width: 100px; 
+    height: 100px;
+}
+.pst li:nth-child(1) {background-color: yellow;}
+.pst li:nth-child(2) {background-color: greenyellow;}
+.pst li:nth-child(3) {background-color: skyblue;}
+.pst li:nth-child(4) {background-color: palevioletred;}
+/* 개별 */
+.pst1 {position: relative;}
+.pst1 li {position: relative;}
+.pst1 li:nth-child(2) {
+    position: relative; /* 필수속성(현재위치기준) */
+    left: 20px;  top: 20px;  /* 선택속성 (이동하고 싶은 방향에 따라 지정) */
+    /* 좌우,상하 방향을 동시에 줄수는 없음 무조건 한방향에만 값을 주기 */
+}
+.pst1 li:nth-child(3) {
+    position: absolute;
+    right: 0; bottom: 0;
+}
+.pst1 li:nth-child(4) {position: absolute; right: 0; top: 0;}
+.pst1 li span {
+    display: inline-block;
+    border:  5px solid red; 
+    padding: 10px; 
+    position: absolute;
+    right: 0; bottom: 0;
+}
+#all {
+    width: 500px; height: 500px;
+    border: 5px solid blue;
+    position: relative;
+}
+#all #box {
+    width: 300px; height: 300px;
+    border: 5px solid red;
+    position: absolute;
+    right: 30px; bottom: 0;
+}
+#all #box .content {
+    width: 150px; height: 150px;
+    background-color: yellow;
+    position: absolute;
+    left:0; bottom: 0;
+}
+.top {
+    position: fixed; /* body 기준 위치 설정 ->태그랑 가까운 부모 상관없이 무조건 body에 설정*/ 
+    right: 50px; bottom: 50px;
+}
