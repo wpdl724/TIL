@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient | CSS</title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        .btn {
+            display: block;
+            border: 1px solid #000;
+            width: 400px; height: 200px;
+        }
+        #btn1 {
+            /* gradient 사용시 -color 없이 통합 background로 명령한다. */
+            background:linear-gradient(-90deg, #eee, rgba(255,0,0,0.5), yellow); /* 선형으로 그라디언트를 주고 싶을때 사용하기 */
+            background-size: 400%;
+            transition: all 1s; /* 마우스를 올리면 1초동안 색상이 변경된다. */
+        }
+        #btn1:hover {
+            background-position: 100% 0; /* 마우스 올리면 색상이 변경된다. */
+        }
+        h1 {
+            text-transform: uppercase; /* 모두 대문자로 바꾸기 */
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, purple, darkblue, #555, brown);
+            background-color: darkmagenta;
+            display: inline-block; /* (방법1) */
+           /*  width: max-content; */ /* (방법1) */
+            /* display:inline-block을 하게되면글자에서 백그라운드 색상이 끝난다. (방법2)너비를 max-content;로 설정하면 된다.*/
+
+            /* gradient 색상을 글자에 적용하기 위한 방법 (마스크 구조) */
+            color:transparent;
+            background-clip: text;
+            background-size: 400%; /* hover을 설정하기 전에는 무조건 `사이즈` 먼저 시작해야한다. 사이즈를 설정하지 않으면 효과가 나타나지 않음  */
+            transition: all 1s;
+
+        }
+        h1:hover {
+            background-position-x: 100%;
+        }
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            background: linear-gradient(90deg, yellow, pink, skyblue );
+            display: inline-block;
+            color: transparent;
+            background-clip: text;
+            background-size: 70%;
+            transition: all 1s;
+        }
+        h2:hover {
+        background-position: -500px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="btn1" class="btn">Hover me!</button>
+    <h1>HTML & CSS & Javascript & figma & react</h1>
+    <h2>happy birthday to you <br> happy birthday to you</h2>
+</body>
+</html>

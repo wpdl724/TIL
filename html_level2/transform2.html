@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform | CSS</title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        #parent {
+            background-color: #eee; padding: 40px;
+        }
+        #parent .child {
+            width: 150px; height: 150px; /* transform 적용 전 크기 기본세팅 */
+            border:1px solid #000;
+        }
+        #parent .child1 {
+            transition:transform 1s;
+            transform-origin: right center;
+        }
+        #parent:hover .child1 {
+            transform: scale(1.5); /* 가운데위치에서부터 크기가 줄어들고 넓어지는 것을 볼수 있음  */
+            /* transform: scale(1.5); -> 전체적으로 늘어난다.
+            transform:scalex(1.5); -> x축으로만 늘어난다.*/
+        }
+        #parent .child2{
+            /* transition: transform 0.5s; */
+            /* transition: left 0.5s, top 0.5s;
+            transform-origin: right top; */
+            position: relative; left: 0; top:0;
+            transition: all 0.5s;
+            transform-origin: right bottom;
+        }
+        #parent:hover .child2{
+            /* transform: rotate(-360deg); */
+            /* transform:skewX(90deg); */
+            /* transform: translate(50px, -20px); */
+            /*position: relative; left: 50px; top: -20px;  transform 대신 position으로 애니메이션 동일하게 설정하기 */
+            left: 50px; top:-20px;
+        }
+
+        /* 네비게이션 만들기 */
+        nav {}
+        nav .gnb {
+            display: flex;
+        }
+        nav .gnb > li {
+            width: 400px;
+            background-color: #333;
+            position: relative;
+        }
+        nav .gnb > li:hover > .lnb {
+            /* display: block; */ /* li(메인메뉴1)에 마우스를 올렸을때 lnb를 보이게 하기 */
+            transform: scaleY(1); /* li(메인메뉴1)에 마우스를 올리면 서브메뉴가 나타나기 */
+            transform:scaleY(1) translatey(0); /* 메인메뉴1에 마우스를 올렸을때 서브메뉴가 위에서 아래로 이동하는 느낌을 준다. */
+            opacity: 1; /* 서브메뉴가 나타날때 투명도를 주기위해서 설정하기 */
+        }
+        nav .gnb > li > a {
+            color: #fff; /* 제일 가까운 곳에서 적용해야하므로, li a한테 설정해야한다. */
+            display: block; /* 내가 작성하지 않아도 넓이가 100%로 설정된다. */
+            text-align: center;
+            line-height: 40px; /* 행간은 40px 수직-중앙으로 오게 하는 설정 */
+        }
+        nav .gnb > li > .lnb {
+            /* display: none; */ /* 초기 숨기기 */
+            transform:scaleY(0) translatey(-50px); /* 0으로 작성하면 서브메뉴가 보이지 않음 / 1을 작성하면 100%이니깐 다시보임 */
+            opacity: 0; /* 나타나는 느낌을 주기위해서 투명도를 설정하기 */
+            transition: all 0.5s; /* 메인 메뉴1에 마우스를 올리면 중앙에서부터 커지면서 움직이게 된다.  */
+            transform-origin: left top; /* transform-origin:left top;을 추가하므로써, 메인메뉴1에 마우스를 올리면  바로 나오는 형태로 보여진다. */
+            /* scaleY(0) -> 숨기기 , scaleY(1)-> 보이기 */
+            /* scaleX(0) -> 숨기기 , scaleX(1)-> 보이기 */
+            position: absolute; left: 0; top:40px; /* 서브메뉴에 부모한테 줬던 백그라운드 색상이 없어진다. 서브메뉴는 이렇게 설정하는 것 */
+            background-color: #eee;
+            width:100%; /* 부모랑 너비가 같고 싶다는 의미 -> 100% */
+        }
+        nav .gnb > li > .lnb li { /*gnb에다가 작성하면 메인메뉴 2까지 작성되는 것 / li에서는 메인메뉴 1 만 작성된다. */
+            
+
+        }
+        nav .gnb > li > .lnb li a{
+            display: block;
+            text-align: center;
+            font-weight: 600;
+            line-height: 25px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="child child1"></div>
+        <div class="child child2"></div>
+    </div>
+    <hr>
+    <nav>
+        <ul class="gnb">
+            <li><a href="#">메인메뉴1</a>
+                <ul class="lnb">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">메인메뉴2</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

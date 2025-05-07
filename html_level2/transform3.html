@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform3d | CSS</title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        .container {
+            background-color: #eee;
+            padding: 30px;
+            perspective: 5000px; /* 3d효과 원근감 깊이 설정 (부모) */
+
+        }
+        .container .btn {
+            background-color: coral;
+            width: 200px; height: 70px;
+            transition: transform 0.5s;
+        }
+        .container .btn:hover {
+            transform: rotateX(60deg) rotatey(20deg) rotateZ(100deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button type='button' class="btn">3D button</button>
+    </div>
+</body>
+</html>
