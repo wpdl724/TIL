@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파과 | 메가박스</title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        main {
+            width: 440px; height: 956px;
+            margin: 0 auto; 
+            padding: 0 30px;
+            background:linear-gradient(45deg, #000, #444, #000);
+        }
+        main #box_office {}
+        main #box_office ul {}
+        main #box_office ul li {perspective: 1000px; /* 원근감 설정하기 (마우스 올렸을때 애니메이션의 원근감을 말함 (참고-값을 줄였을때 봐라/ 이미지가 뒤집힐때 돌아가는 부분을 보면 된다)*/}
+        main #box_office ul li .poster {
+            position: relative; /* back absolute의 부모기준 */
+            display: block;
+            width: 380px; height: 541.5px;
+            transition: all 1s; /* transition -> 애니메이션 설정하기 */
+            transform-style: preserve-3d; /* 3d 입체형으로 나타나야 하니깐 preserve-3d로 설정하기 */
+            transform: scale(1);
+        }
+        main #box_office ul li .poster:hover {
+            transform: rotateY(180deg) scale(1); /* 마우스를 올렸을때 뒤집기 -> ratatey 180deg로 설정 */
+        }
+        main #box_office ul li .poster .front {
+            position: relative; /* (ranking) absolute의 위치 부모기준  */
+            backface-visibility: hidden; /* front + back 모두 숨기기 설정해줘야한다. */
+        }
+        main #box_office ul li .poster .front .ranking {
+            color: #fff;
+            position: absolute;  /* 겹치기 위한 위치속성 */
+            left:20px; top:20px;
+            font-size: 2.5rem;
+            text-shadow:0 3px 3px #000; /* (x , Y , blur)텍스트 그림자 설정하기 */
+            
+        }
+        main #box_office ul li .poster .front img {
+
+        }
+        main #box_office ul li .poster .back {
+            background-color: rgba(0, 0, 0, 0.7); /* 검정색+ 불투명도 70%(0.7) */
+            position: absolute; left:0; top:0; height: 100%; /* 높이 설정-> 부모기준 100% */
+            display: flex; /* h2~score 요소들 위치정렬 */ 
+            flex-flow: column nowrap; /* 메인축 방향 수직으로 */
+            justify-content: space-between; /* 메인축 정렬 (양끝으로) */
+            padding: 40px;
+            transform: rotatey(180deg); /* back 을 뒤집어놔야된다. 그래서 'transform: rotatey(180deg);' 로 설정하기*/
+            backface-visibility: hidden;/* 이면가시성 */
+        }
+        main #box_office ul li .poster .back * {
+            color: #fff; 
+        }
+
+        main #box_office ul li .poster .back h2 {}
+        main #box_office ul li .poster .back p {}
+        main #box_office ul li .poster .back .score_g {
+            border-top:1px solid #fff;
+            padding:20px 0 0; /* 상하 20, 좌우 0 */
+            text-align: center; /* 관련평 8.5 가운데 정렬 */
+        }
+        main #box_office ul li .poster .back .score_g span {}
+        main #box_office ul li .poster .back .score_g .score {
+            font-size: 1.875rem;
+        }
+        main #box_office ul li .poster .back .score_g em {}
+
+    </style>
+</head>
+<body>
+    <main>
+        <div id="box_office">
+            <ul>
+                <li></li>
+                <li>
+                    <a href="#" class="poster">
+                        <div class="front"> <!--텍스트 (순위 ) -->
+                            <em class="ranking">2</em>
+                            <img src="./animation/images/poster.jpg" alt="파과">
+                        </div>
+                        <div class="back">
+                            <h2>지킬 게 생긴 킬러 VS 잃을 게 없는 킬러</h2>
+                            <p>40여 년간 감정 없이 바퀴벌레 같은 인간들을 방역해온 60대 킬러 ‘조각’ (이혜영). ‘대모님’이라 불리며 살아있는 전설로 추앙받지만</p>
+                            <div class="score_g">
+                                <span>관람평</span>
+                                <em class="score">8.5</em>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

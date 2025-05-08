@@ -35,16 +35,54 @@
         /* 
         1(주황선) 2(책) 3(문어) 4(벌) 5(꽃병) 6(별1) 7(별2)
         */
-        main #deco .obj1 {z-index:9; right:0;}
-        main #deco .obj2 {z-index:10; top:-100px; left:-50px;}
-        main #deco .obj3 {z-index:9; right:190px; top:0;}
-        main #deco .obj4 {z-index:11; right:0; bottom:0;}
-        main #deco .obj5 {z-index:11; right:150px; bottom:0;}
+        main #deco .obj1 {
+            z-index:9; right:0;
+            animation: rotate 2s linear alternate infinite;
+        }
+        main #deco .obj2 {
+            z-index:10; top:-100px; left:-50px;
+            animation: bk 1s both; /* 책이 한번 움직인다 */
+        }
+        main #deco .obj3 {
+            z-index:9; right:190px; top:0;
+        animation: top 1s 0.8s both;} /* 문어가 0.8초 쯤에 위로 튀어나오는 설정 */
+        main #deco .obj4 {
+            z-index:11; right:0; bottom:0;
+            animation: bee 1s both; /* 벌이 도착위치에서 멈춰야하니깐 both 를 작성한다. */
+        }
+        main #deco .obj5 {
+            z-index:11; right:150px; bottom:0;
+            animation: rotate 2s linear alternate-reverse infinite; /* 꽃병 역방향으로 재생 */
+        }
         main #deco .obj6 {z-index:12; left:-50px; bottom:100px;}
         main #deco .obj7 {z-index:12; right:50px; top:-30px;}
-        
+
+        /* 애니메이션 호출 그룹 */
+        main #deco .obj6, main #deco .obj7 {
+            animation: scale 0.8s linear alternate infinite;
+        }
         /* 애니메이션 */
-        
+        @keyframes bk { /* 책 */
+            from {transform: translateX(100px);}
+            to {transform: translateX(0);}
+        }
+        @keyframes bee { /* 벌 */
+            from {transform: translate(0,0);}
+            to {transform: translate(-350px, 100px) rotate(60deg);}
+        }
+        @keyframes top { /* 문어 */
+            from {transform: translateY(0);}
+            to {transform: translateY(-130px);}
+        }
+        @keyframes rotate{ /* 별 */
+            0% {transform: rotate(0);}
+            100% {transform: rotate(10deg);}
+        }
+        @keyframes scale{ /* 별 1,2 */
+            0% {transform: scale(1);}
+            100%{transform: scale(1.5);}
+        }
+
 
     </style>
 </head>

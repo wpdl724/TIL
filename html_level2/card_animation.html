@@ -14,24 +14,27 @@
         }
         main .card_container {
             perspective: 1000px;/* 부모 원근감 깊이 설정 */
+            /* transition: all 0.3s; /* 여기다가 작성해도 무방하다. 카드가 좌우 회전하는 느낌의 '애니메이션' 속성 설정하기 */
         }
         main .card_container .card {
             position:relative;
             display: block;/* 크기 인식 속성 변경 */
             width: 640px; height: 415px;
-            transform:scale(1) /* 640px 의 0.5 정도 줄어든다. */
+            transition: all 0.3s; /* 카드가 좌우 회전하는 느낌의 '애니메이션' 속성 설정하기 */
+            transform-style: preserve-3d; /*(뒤집는 카드 3d 부모설정) 마우스올렸을때 카드 뒷면 나오게 하기 */
+            transform:scale(0.5) /* (카드 크기 조절)640px 의 0.5 정도 줄어든다. */
         }
         main .card_container .card:hover {
-            transform:rotateY(180deg);/* (마우스 올렸을 시)카드 뒤집기 */
+            transform:rotateY(180deg) scale(0.5);/* (마우스 올렸을 시)카드 뒤집기 */
         }
         main .card_container .card > * {
-            position:absolute; left:0; top:0;
+            position:absolute; left:0; top:0; /* 앞, 뒤면 카드 겹치기 */
         }
-        main .card_container .card .frond {}
-        main .card_container .card .frond img {}
+        main .card_container .card .front {}
+        main .card_container .card .front img {}
         main .card_container .card .back {
             transform: rotateY(180deg);
-            /* 이면가시성 : 뒤집힌 면은 남기고 안보이는 부분은 숨겨라*/
+            /* 이면가시성 CSS: (카드 앞, 뒷면 모두 뒤집는 면 숨기기) 뒤집힌 면은 남기고 안보이는 부분은 숨겨라*/
             backface-visibility: hidden;
         }
         main .card_container .card .back img {}

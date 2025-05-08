@@ -61,16 +61,39 @@
             display:flex; justify-content: space-between; align-items:center;
         }
         main .center h1 {color:#fff; display:flex; flex-flow:column nowrap; justify-content: space-between;}
-        main .center h1 span {font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0;}
+        main .center h1 span {
+            font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0; 
+            color: #fff; opacity:0; /*불투명도 기본값 미리 설정하기 */
+            animation: top_txt 0.5s both;
+        }
+        main .center h1 span:nth-child(2) {
+            animation-delay: 0.5s; /* 0.5초 뒤에 나오는 설정 */
+        }
         main .center .right {
-            position:relative; right:174px; top:-100px;
+            position:relative; right:174px; top:-100px; 
+            opacity: 0; /* 초기값 설정 */
+            animation: circle 1.5s both;
         }
         main .center .right span {
             position:absolute; width:174px; height:174px;
         }
-        main .center .right span:nth-child(1) {}
-        main .center .right span:nth-child(2) {text-align:center; line-height:174px;}
+        main .center .right span:nth-child(1) {animation: rotate360 30s linear alternate infinite; /* 일정한 속도로 정방향 , 무한 반복 설정 */
+        }
+        main .center .right span:nth-child(2) {text-align:center; line-height:174px;
+        }
         /* animation */
+        @keyframes top_txt{
+            0% {transform: translateY(0);}
+            100%{transform: translateY(-50px); opacity:1;}
+        }
+        @keyframes rotate360{
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
+        }
+        @keyframes circle {
+            from {transform: translateX(100px);} /* 오른쪽으로 가고 싶으면 음수, 왼쪽으로 가고싶으면 양수로 설정 */
+            to {transform: translatex(0);opacity: 1}
+        }
     </style>
 </head>
 <body>
@@ -152,7 +175,7 @@
                     <span>고객이 필요한 것을</span>
                     <span>먼저 생각합니다.</span>
                 </h1>
-                <div class="right">
+                <div class="right"> <!-- 계속 돌고 있는 애니메이션 설정해야함 -->
                     <span><img src="images/unid/play_line_bg_small.png" alt=""></span>
                     <span><img src="images/unid/play_icon.png" alt=""></span>
                 </div>

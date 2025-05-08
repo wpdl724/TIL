@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation | keyframs | CSS</title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        main {background-color: #eee; padding: 50px; height: 100vh;}
+        main .target {} /* 공통 */
+        main .ball1 {
+            background: radial-gradient(at left top, #fff, #222); /* 원형 그라디언트 설정 (at left top을 설정하면 왼쪽 상단에 빛받는 부분이 된다 [2d 형태로 보여짐]) */
+            background-size:150%; 
+            /* background-position: 100%; 빛받는 부분 위치설정 */
+            width: 50px; height: 50px; /* 원형 그라디언트 사이즈 설정해야 보인다. */
+            border-radius: 50%; /* 원형으로 설정 */
+            animation: right500 1s linear 0.5s 2 alternate-reverse both; /* 자동재생 된다 (마우스를 올렸을때 재생 된것이 아니라) (ease 작성 하면 빨랐다가 나중에 천천히 멈추는 느낌 / liner작성하면 설정한 시간만큼 움직인다 / 무한반복 -> infinite 을 작성하면 된다.)*/
+            /* animation : 이름 지속시간 진행속도 지연시간 반복횟수 재생방향 종료스타일; 순으로 작성해야한다 ☆ */
+        }
+        /* 연습 ball2 */
+        main .ball2 {
+            background: radial-gradient(at left top, #fff, rgb(255, 255, 54), rgb(226, 159, 15));
+            background-position: 100%;
+            background-size: 150%;
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            /* animation: top400 1s linear 0.5s 3 alternate both;  */
+            /* alternate 정방향-역방향 , both 를 제일 많이 사용한다. 암기하기!! */
+            
+        }
+        /* 연습 ball3 축구공*/
+        main .ball3 {
+            /* animation: zigzag 3s alternate infinite;  */
+        }
+        main .ball3 img { 
+            width: 80px;
+            animation: rotate360 1s infinite; /* 키프레임을 썼으면 선택자로 돌아와서 애니메이션 속성을 바로 써야한다 . 키프레임 이름명을 적고 몇초동안 할것인지 작성하기 */
+        }
+        /* html 텍스트 연습 */
+        section {}
+        section .ad {
+            height: 50vh; padding: 50px;
+        }
+        section .ad span {
+            text-transform: uppercase;
+            font-size: 3rem; font-weight: 800;
+            display: inline-block;
+            animation: ad_txt 0.5s both; /* span에 애니메이션을 설정했는데 안움직인다? -> 인라인블록처리를 안해서이다. */
+
+        }
+        section .ad span:nth-child(1) {animation-delay: 0s;} /* 속도 단위 써야함 */
+        section .ad span:nth-child(2) {animation-delay: 0.3s;}
+        section .ad span:nth-child(3) {animation-delay: 0.6s;}
+        section .ad span:nth-child(4) {animation-delay: 0.9s;}
+
+        /* 연습  */
+        section .count {
+            height: 100vh; padding: 100px;
+        }
+        section .count span {
+            font-weight: 800;
+            display: inline-block;
+            animation: count_txt 0.5s both;
+        }
+        section .count span:nth-child(1) {
+            font-size: 2.5rem;
+            animation-delay: 0.1s;
+            padding-right: 100px;
+            animation: rotate360 0.5s both;
+            color: cadetblue;
+        }
+        section .count span:nth-child(2) {
+            animation-delay: 0.3s;
+            font-size: 6rem;
+            padding-right: 80px;
+
+        }
+        section .count span:nth-child(3) {
+            animation-delay: 0.6s;
+            font-size: 6rem;
+            padding-right: 80px;
+        }
+        section .count span:nth-child(4) {
+            animation-delay: 0.9s;
+            font-size: 6rem;
+            padding-right: 80px;
+        }
+        /* 애니메이션 적용 순서 1. 키프레임(장면)생성 2. 애니메이션 호출 */
+        @keyframes right500 {/* 오른쪽으로 500px 만큼 이동하려고 '이름명'을 지었음 */
+        /* 이동하려고 하면 "position: / transform:translasteX(500px);" -> 둘중에 transform으로 작성하는게 쉽다  */
+        from {transform: translatex(0) rotate(0);}
+        to {transform: translatex(500px) rotate(360deg);}
+        }
+        @keyframes top400 {
+            from {transform: translatey(0) rotate(0);}
+            to {transform: translatey(400px) rotate(360deg);}
+        }
+        @keyframes zigzag {
+            0% {transform: translate(0, 0);}
+            50% {transform: translate(500px, 0);}
+            75% {transform: translate(0, 500px);} /* x축이 0이되어야 다시 돌아오는 것 */
+            100% {transform: translate(500px, 500px);}
+        }
+        @keyframes rotate360 {
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
+        }
+        @keyframes ad_txt {
+            from {transform: translateY(50px); opacity: 0;} /* 투명도를 줘서 움직일때 살짝 투명도가 올라온다 */
+            to {transform: translateY(0);}
+        }
+        @keyframes count_txt {
+            from {transform: translatex(800px) ;}
+        }
+        @keyframes rotate360{
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="target ball1"></div>
+        <div class="target ball2"></div>
+        <div class="target ball3"><img src="https://cdn-icons-png.flaticon.com/128/33/33736.png" alt="축구공"></div>
+    </main>
+    <section>
+        <div class="ad">
+            <span>h</span>
+            <span>t</span>
+            <span>m</span>
+            <span>l</span>
+        </div>
+        <div class="count">
+            <span>start !</span>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+        </div>
+    </section>
+</body>
+</html>

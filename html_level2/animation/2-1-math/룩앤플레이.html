@@ -21,8 +21,19 @@
         main {height:150vh; }
         main #visual {background:#26bad7; min-width:1200px; margin:0 auto; height:550px; position:relative;}
         main #visual #deco {position:relative; width:1200px; margin:0 auto;}
-        main #visual #deco .obj {position:absolute;}
-
+        main #visual #deco .obj {position:absolute;
+        }
+/* =================================================3개의 그룹으로 묶어서 애니메이션 정리  - 애니메이션 호출 그룹*/
+        main #visual #deco .obj1,
+        main #visual #deco .obj3,
+        main #visual #deco .obj6 {animation: rotate 2s linear alternate infinite;}
+        main #visual #deco .obj5,
+        main #visual #deco .obj8 {animation: rotate 2s linear alternate-reverse infinite;}
+        main #visual #deco .obj2,
+        main #visual #deco .obj4,
+        main #visual #deco .obj7 {animation: scale 0.8s alternate-reverse both infinite }
+        main #visual #deco .obj9 {animation: scale 0.8s alternate-reverse both infinite}
+/* =========================================================================================== */
         main #visual #deco .obj1 {
             top:170px; left:50%; margin-left:-342px;
         }
@@ -31,6 +42,7 @@
         }
         main #visual #deco .obj3 {
             left:100px; top:250px;
+
         }
         main #visual #deco .obj4 {
             left:150px; top:350px;
@@ -69,6 +81,14 @@
         main .category a.active {background:#26bad7; color:#fff;}
 
         /* 애니메이션 */
+        @keyframes rotate {
+            from {transform: rotate(0);}
+            to {transform: rotate(20deg);}
+        }
+        @keyframes scale {
+            from {transform: scale(1);}
+            to {transform: scale(1.2);}
+        }
 
     </style>
 </head>

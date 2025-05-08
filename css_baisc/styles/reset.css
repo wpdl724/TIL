@@ -6,7 +6,7 @@ form,fieldset,legend,input,button,select,option,textarea,
 em,strong,sub,sup,br,span,del,s,q,mark,code,img,a {
     margin:0; padding:0; box-sizing:border-box;
     line-height:1; letter-spacing:0; letter-spacing:0; word-spacing: 0;
-    font-size:1em; font-weight:400; font-style:none;
+    font-size:1em; font-weight:400; font-style:normal;
     color:#000;
     font-family: 'pretendard', sans-serif;
 }
