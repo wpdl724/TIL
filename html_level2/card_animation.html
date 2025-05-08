@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d transform | css</title>
+    <link href="../css_basic/styles/reset.css" rel="stylesheet">
+    <!-- 내부 스타일 -->
+    <style>
+        main {
+            /* width: 100%; */
+            height: 100vh;
+            background:linear-gradient(90deg,rgba(173, 213, 255, 1) 0%, rgba(122, 186, 255, 1) 55%, rgba(138, 138, 255, 1) 100%);
+        }
+        main .card_container {
+            perspective: 1000px;/* 부모 원근감 깊이 설정 */
+        }
+        main .card_container .card {
+            position:relative;
+            display: block;/* 크기 인식 속성 변경 */
+            width: 640px; height: 415px;
+            transform:scale(1) /* 640px 의 0.5 정도 줄어든다. */
+        }
+        main .card_container .card:hover {
+            transform:rotateY(180deg);/* (마우스 올렸을 시)카드 뒤집기 */
+        }
+        main .card_container .card > * {
+            position:absolute; left:0; top:0;
+        }
+        main .card_container .card .frond {}
+        main .card_container .card .frond img {}
+        main .card_container .card .back {
+            transform: rotateY(180deg);
+            /* 이면가시성 : 뒤집힌 면은 남기고 안보이는 부분은 숨겨라*/
+            backface-visibility: hidden;
+        }
+        main .card_container .card .back img {}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="card_container">
+            <a href="#" class="card">
+                <div class="front"><img src="./animation/images/card_front.png" alt=""></div>
+                <div class="back"><img src="./animation/images/card_back.png" alt=""></div>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
