@@ -23,9 +23,12 @@
             flex-flow:column wrap;
         }
         main section a .img img {width:100%; border-radius:3px;}
-        main section a:hover .img img {}
+        main section a:hover .img {
+            filter:brightness(120%);
+        }
         /* 상품 내용 디자인 상세 */
-        main a > span {font-size:0.91rem; letter-spacing:-0.5px; line-height:1.5;}
+        main a > span {font-size:0.91rem; letter-spacing:-0.5px; line-height:1.5;
+        }
         main a .name {padding:0 0 5px; margin:0 0 5px; border-bottom:1px solid #ccc;}
         main a .price {margin:0 0 5px;}
         main a .price del {color:#aaa;}
