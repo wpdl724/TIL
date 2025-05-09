@@ -6,12 +6,70 @@
     <title>청청원 OFOOD</title>
     <link rel="stylesheet" href="../css_baisc/styles/reset.css">
     <style>
-
+        /* desktop (1000 ~ max*/
+        header {min-width: 320px;} /* 320px 최소 크기설정 */
+        header .all_nav{display:none;} /* 안보여야 하는 설정 */
+        header .h1 {}
+        header nav {}
+        header .right_menu {}
+        header .right_menu #search_btn {}
+        header .right_menu .search_open {display:none;}
+        header .right_menu .login_btn {}
+        @media screen and (max-width:999px) {} /* 700 ~ 999 태블릿 */
+        @media screen and (max-width:699px) { /* 0 ~ 699 모바일 */
+            header .all_nav{display:block;} /* 보이기 설정 */
+            header nav {display: none;}
+            header .right_menu .login_btn {display: none;}
+        } 
     </style>
 </head>
 <body>
     <header>
-        
+        <!-- 1. mobile menu -->
+        <div class="all_nav">
+            <button type="button" id="open_nav" title="menu open">
+                <!-- <img src="" alt="전체메뉴보기">  고정이미지를 메뉴로 쓰는 경우 -->
+                <!-- 사용자의 동작에 따라 애니메이션을 원할경우 (아래) -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- 2. desktop ~ mobile logo -->
+        <h1><a href="#"><img src="" alt="Ofood"></a></h1>
+        <!-- 3. desktop ~ tablet gnb-->
+        <nav>
+            <a href="#">ABOUT O' FOOD</a>
+            <a href="#">ABOUT O' FOOD</a>
+            <a href="#">ABOUT O' FOOD</a>
+            <a href="#">ABOUT O' FOOD</a>
+            <a href="#">ABOUT O' FOOD</a>
+        </nav>
+        <!-- 4. desktop ~ mobile menu-->
+        <div class="right_menu">
+            <button type="button" id="search_btn"><img src="" alt="search"></button>
+            <!-- (위) 버튼클릭 시 열리는 검색창 -->
+            <div class="search_open">
+                <form action="#" method="get">
+                    <div class="top">
+                        <img src="" alt="">
+                        <input type="search" name="search_user">
+                        <a href="#" class="close">X</a>
+                    </div>
+                    <div class="btm">
+                        <h2>browse categories</h2>
+                        <p>
+                            <a href="#">Best Sellers</a>
+                            <a href="#">Best Sellers</a>
+                            <a href="#">Best Sellers</a>
+                            <a href="#">Best Sellers</a>
+                            <a href="#">Best Sellers</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <a href="#" class="login_btn"><img src="" alt="로그인"></a>
+        </div>
     </header>
 </body>
 </html>
