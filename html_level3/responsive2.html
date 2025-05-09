@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive2 | 반응형 웹2</title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        main {
+            /* max-width: 1920px;  쓸 필요가 없다 -> width:100%; 라고 변경하자*/
+            width: 100%;
+            min-width: 1200px;
+            border: 5px solid #000; height: 100vh;
+        }
+        main ul { 
+            display: flex; 
+            flex-flow: row wrap;
+            gap: 6px;
+        }
+        main ul li {
+            /*width: calc(100% / 4);  여백이 없을 경우  */
+            width: calc((100% - (6px * 3)) / 4);
+            height: 200px;
+        }
+        main ul li:nth-child(odd){background-color: rgb(159, 187, 240);}
+        main ul li:nth-child(even){background-color: rgb(205, 241, 143);}
+
+        /* 반응형 규칙 값 설정 */
+        @media screen and (max-width: 1199px){
+            /* main {min-width: 720px;} */
+            main ul li { width: calc((100% - (6px * 2)) / 4);} /* 변경할 부분만 작성해야된다. */
+        }/*media 720~1199 end */
+
+        @media screen and (max-width:719px) {
+            main {min-width: 320px;}
+            main ul li {width:calc(100% - (6px * 1 )/ 2);}
+        }
+    </style>
+</head>
+<body>
+    <!-- 공통 여백 (gap) 6px 설정하기-->
+    <!-- 1200~1920 Desktop (4열) -->
+    <!-- 720~1199  Tablet (3열) -->
+    <!-- 320~719 Mobile (2열) -->
+    <main>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </main>
+</body>
+</html>

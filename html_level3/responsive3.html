@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive3 | 반응형 웹 3 - 유튜브 제작 </title>
+    <link rel="stylesheet" href="../css_baisc/styles/reset.css">
+    <style>
+        /* desktop 1025 ~ 100% (column3)  */   
+        /* tablet 769 ~ 1024 (column 2) */
+        /* mobile 320 ~ 768  (column 1)*/
+        
+        #youtube_wrap{
+            width: 100%;
+            min-width: 320px; /*  320px 까지만 작아져라 라는 의미 */
+        } 
+        #youtube_wrap header{
+            height: 56px; width: 100%;
+            background-color: yellow;
+            /* position: fixed; top: 0;  처음부터 고정된부분은 fixed를 많이 사용한다*/ 
+            position: sticky; top: 0;
+        }  
+        #youtube_wrap main{
+            display: flex; flex-flow: row nowrap; /* flex 기본값 설정 */
+        } 
+        #youtube_wrap main aside{
+            background-color: pink;
+            height: calc(100vh - 56px);
+            width: 240px; /* 반응형 상태에서 고정영역은 px 허용 */
+            position: sticky; top:56px; /*  웹 브라우저 특정위치 (top0)에 닿으면 부모 (main)의 세로크기 (자식 최대 높이 만큼 인식)가 끝날때까지 화면에 고정시킨다. ( sticky 쓰고 싶다면 부모 크기가 커야된다) */
+        } 
+        #youtube_wrap main section{
+            background-color: purple;
+            height: 200vh; /* 스크롤시 한참 내려가는 걸 볼 수 있음  */
+            width: calc(100% - 240px);
+        } 
+        #youtube_wrap main section .mv{
+            display: flex; flex-flow: row wrap;
+        } 
+        #youtube_wrap main section .mv li{
+            width: calc(100% / 3);
+            height: 300px;
+        } 
+        #youtube_wrap main section .mv li:nth-child(odd){background-color: rgb(159, 187, 240)} 
+        #youtube_wrap main section .mv li:nth-child(even){background-color: rgb(205, 241, 143);} 
+
+        /* 반응형 규칙 생성 */
+        @media screen and (max-width:1024px) {
+            #youtube_wrap main aside {display: none;} /* 사이드 숨기기 */
+            #youtube_wrap main section{width: 100%;} /*  사이드 뺀 값 제거하고 100%로 인식 */
+            #youtube_wrap main section .mv li {width: (100% / 2);}
+        }/* 769 ~ 1024 end */
+        @media screen and (max-width:768px) {
+            #youtube_wrap main section .mv li {width: (100%);}
+        }/* 320 ~ 768 end */
+    </style>
+</head>
+<body>
+    <div id="youtube_wrap">
+        <header>header</header>
+        <main>
+            <aside>왼쪽고정영역</aside>
+            <section>
+                <ul class="mv">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

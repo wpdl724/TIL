@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>responsive</title>
+    <title>responsive | 반응형 웹 1</title>
     <link rel="stylesheet" href="../css_baisc/styles/reset.css">
     <style>
         main {
-            /* width:1920px; 1920으로 가로 크기를 고정 (반응형 웹 제작시 고정 크기 주의!)
-            {반응형에서는 '고정'이라는 것이 있으면 안됨, 정말 필요한것 아닌이상 쓰면 안됨} */
+            /* 1920으로 가로 크기를 고정 (반응형 웹 제작시 고정 크기 주의!)*/
+            /* width:1920px; */
+            /*{반응형에서는 '고정'이라는 것이 있으면 안됨, 정말 필요한것 아닌이상 쓰면 안됨} */
             /* 최대 제한 너비 1920 (사용자가 보는 디바이스 크기가 1920이하일 경우 상대적으로 자동크기 조절) */
             /* 최소제한 너비 901 (901~1920 사이 값만 상대처리를 위한 최소 제한 값 설정 )  */
             max-width: 1920px; /* 여기까지만 커져라 (최대크기) */
             min-width: 901px; /* 여기까지만 작아져라 (최소크기) */
             border: 5px solid #000; height: 100vh; /* 높이- 화면 꽉 차게 설정 */
         }
-        
+    
         main .mv_list{
             display: flex;  
             flex-flow: row wrap;
             /* 자식 사이 여백을 일정하게 적용시키는 flex 부모속성 */
             gap:10px;
         }
+
         main .mv_list li{
             /*width:calc(100% / 3);  반응형에서 요소 크기 조절시 px 크기로 설정하면 안된다. (특히 '너비')  % 또는 calc() 계산법으로 상대처리를 해야한다. 크기가 고정되는 광고 및 특정 영역만 필요시  최소한 px 고정 너비를 적용한다.*/
             /* width: calc((100% - 20px) / 3); */
             width: calc((100% - (10px * 2)) / 3);
             height:250px; /* 임시 높이값 설정 */
-        
         }
         main .mv_list li:nth-child(odd){background-color: rgb(174, 247, 57);}
         main .mv_list li:nth-child(even){background-color: #f5b3df;}
@@ -49,7 +50,6 @@
             main {min-width: 320px; border-color: blue;}
             main .mv_list li {width: calc(100%);}
         } /* meida 320~600 end */
-            
     </style>
 </head>
 <body>
