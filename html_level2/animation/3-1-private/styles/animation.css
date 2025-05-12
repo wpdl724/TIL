@@ -39,7 +39,6 @@ main::after {
     height: 100vh;
     z-index: 20;
 }
-
 main::before {
     left: 0;
     background: linear-gradient(to right, rgba(9,13,43,1), rgba(9,13,43,0));
