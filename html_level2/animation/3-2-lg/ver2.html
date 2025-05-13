@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="reset.css">
     <style>
         body {background:#000;}
-        body * {border:1px solid aqua;}
+        /* body * {border:1px solid aqua;} */
         header {
             padding:20px 0; width:1400px; margin:0 auto;
             display:flex; justify-content:space-between; align-items:center;
@@ -42,6 +42,12 @@
             background:url(images/bg_flow.png) repeat-x left top;
             height:150px; width:100%;
             position:absolute; z-index:30;
+            animation:txt 15s linear infinite;
+        }
+        /*  애니메이션  */
+        @keyframes txt {
+            from {background-position: 0;}
+            to {background-position: 1000px;}
         }
     </style>
 </head>
@@ -53,7 +59,8 @@
     <main>
         <div class="center">
             <div class="video_bg">
-                <video src="video/golden.mp4" autoplay muted loop></video>
+                <!-- <video src="video/golden.mp4" autoplay muted loop></video> -->
+                <video src="https://cdn.pixabay.com/video/2024/06/27/218489_large.mp4" autoplay muted loop></video>
                 <img src="images/img_intro.png" alt="">
             </div>
             <div class="txt_bg_ani"></div>
