@@ -29,6 +29,28 @@ main {
     top: 80px;
     text-align: center;
 }
+/* 좌/우 끊긴 배경 자연스럽게 처리하기 */
+main::before { /* 왼쪽 */
+    content: ''; /* 가상 선택자니깐 content 넣기 */
+    display: block;
+    width: 50%; /* 가로크기는 절반 50% */
+    height: 100%; /* 세로크기는 다채울거니깐 100% */
+    position: absolute; left: 0; top: 0;
+    /* border: 5px solid red; 구역 확인 -그라디언트 줄 부분 구역 확인하기 */
+    background: linear-gradient(90deg, rgba(9,13,43,0.1));
+    z-index: 20; /* 높이 올려서 확인하기 , 단위가 포함되면 안된다*/
+} 
+main::after { /*  오른쪽  */
+    content: '';
+    display: block;
+    width: 50%;
+    height: 100%;
+    position: absolute; right: 0; top:0;
+    /* border: 5px solid red; */
+    background: linear-gradient(-90deg,rgba(9,13,43,0.1));
+    z-index: 20;
+}
+
 main > * {max-width:1400px; margin:0 auto;}
 /* 중첩순서 처리 배경(10) 그라디언트(20) 나머지(30) */
 main .bg_wrap {position:absolute; z-index:10;}
@@ -37,17 +59,21 @@ main .txt, main .car_list, main .car, main .scroll {
 }
 /* 메인배경 */
 main .bg_wrap .bg {width:1400px; margin:0 auto;}
-main .bg_wrap .bg1 {
+main .bg_wrap .bg1 { /* 구름 */
     height:100px; 
-    background:url(../images/bg_cloud.png) repeat-x;
+    background:url(../images/bg_cloud.png) repeat-x;/* 애니메이션 키프레임 작성을 백그라운드 포지션으로 작성하자 */
+    animation: bg 50s linear infinite; 
 }
-main .bg_wrap .bg2 {
+main .bg_wrap .bg2 { /* 뒤 도시배경 */
     height:200px; 
-    background:url(../images/bg_city1.png) repeat-x;
+    background:url(../images/bg_city1.png) repeat-x; /* 애니메이션 키프레임 작성을 백그라운드 포지션으로 작성하자 */
+    animation: bg 30s linear infinite; 
+
 }
-main .bg_wrap .bg3 {
+main .bg_wrap .bg3 {/* 앞 도시배경 */
     height:100px; position:relative; top:-96px;
-    background:url(../images/bg_city2.png) repeat-x;
+    background:url(../images/bg_city2.png) repeat-x;/* 애니메이션 키프레임 작성을 백그라운드 포지션으로 작성하자 */
+    animation: bg 10s linear infinite; 
 }
 /* 메인제목 */
 main .txt {}
@@ -57,6 +83,7 @@ main .car {margin-top:150px; text-align:center; width:600px;}
 main .car #car {width:100%;}
 main .car #left_tire, main .car #right_tire {
     position:absolute; bottom:25px; width:67px;
+    animation: tire 2s linear infinite;
 }
 main .car #left_tire {left:102px;}
 main .car #right_tire {right:91px;}

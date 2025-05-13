@@ -32,36 +32,35 @@
         #menu_title img {padding:0 10px;}
         /* 메뉴내용 */
         .menu_contents {position:relative;}
-        .menu_contents .menu {
+        .menu_contents .menu { 
             display:flex; justify-content:space-between;
             position:absolute; left:0; top:0;
+            display: none;
+        }
+        .menu_contents .menu1 { /* 추가 */
+            display:flex;
         }
         .menu_contents .menu a {
             margin-right:10px; overflow:hidden; position:relative;
             border-radius:10px; 
-            display: block; /* 추가 */
-            /* transition: all 0.4s; 추가 */
+            transition: all 0.5s; /* 추가 */
         }
-        .menu_contents .menu a:hover * { /* 추가 */
-            display: block;
-            animation: circle 0.2s linear alternate both;
+        .menu_contents .menu a:hover { /* 추가 */
+            border-radius: 50%;
         }
-        .menu_contents .menu2 { /* 추가 */
-            display: none;
-        }
-        .menu_contents .menu3 { /* 추가 */
-            display: none;
+        .menu_contents .menu a:hover .info { /* 추가 */
+            opacity: 1; /* a에 올렸을때 자식 info에 설정주기 */
         }
         .menu_contents .menu a:last-child {margin-right:0}
         .menu_contents .menu a img {width:100%;}
         /* 커피정보 */
         .menu_contents .menu .info {
             background:rgba(0,102,51,0.8); /*#006633 == rgb(0,102,051)*/
-            color:#fff;
             width:100%; height:100%; display:block;
             position:absolute; left:0; top:0;
             text-align:center;
-            display: none; /* 추가 */
+            opacity: 0; /* 추가 */
+            transition: opacity 0.3s; /* 추가 */
         }
         .menu_contents .menu .info span:first-child {padding-top:40%;}
         .menu_contents .menu .info span {
@@ -77,13 +76,6 @@
             width:100%; height:2px; background:#006633;
             position:absolute; bottom:-10px; left:0;
         }
-
-        /* =======애니메이션======= */ /* 과제 */
-        @keyframes circle {
-            from {border-radius: 0;}
-            to {border-radius: 50%;}
-        }
-        
     </style>
     <script>
         window.onload=function(){
@@ -112,7 +104,7 @@
                 <a href="#">
                     <img src="images/menu1-1.jpg" alt="">
                     <span class="info">
-                        <span>콜드브루커피</span>
+                        <span>콜드브루커피</span> <!-- 흰색 글자로 변경해야됨 -->
                         <span>50kcal</span>
                     </span>
                 </a>
