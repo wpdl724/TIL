@@ -37,7 +37,7 @@ main::before { /* 왼쪽 */
     height: 100%; /* 세로크기는 다채울거니깐 100% */
     position: absolute; left: 0; top: 0;
     /* border: 5px solid red; 구역 확인 -그라디언트 줄 부분 구역 확인하기 */
-    background: linear-gradient(90deg, rgba(9,13,43,0.1));
+    background: linear-gradient(90deg, rgb(9,13,43), transparent); 
     z-index: 20; /* 높이 올려서 확인하기 , 단위가 포함되면 안된다*/
 } 
 main::after { /*  오른쪽  */
@@ -47,7 +47,7 @@ main::after { /*  오른쪽  */
     height: 100%;
     position: absolute; right: 0; top:0;
     /* border: 5px solid red; */
-    background: linear-gradient(-90deg,rgba(9,13,43,0.1));
+    background: linear-gradient(-90deg,rgb(9,13,43), transparent);
     z-index: 20;
 }
 
