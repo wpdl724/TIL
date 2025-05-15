@@ -16,25 +16,37 @@
         .h_bg header {width:1200px; margin:0 auto;}
         .h_bg header img {width:100%;}
         .slide_wrap {}
-        .slide_wrap .slide_c {position:relative;}
+        .slide_wrap .slide_c {position:relative\;}
         .slide_wrap .slide_c .slide {
             position:absolute; left:0; top:0;
             width:100%; height:100vh;
-            background-position:center;
-            opacity:0; transition:opacity 0.5s;
+            background-position: center;
+            opacity:0; transition: opacity 0.5s;
         }
-        .slide_wrap .slide_c .slide1 {background-image:url(images/bg1.jpg); opacity:1}
+        .slide_wrap .slide_c .slide1 {
+            background-image:url(images/bg1.jpg); opacity:1;
+            animation: bg 1s linear both;
+        }
         .slide_wrap .slide_c .slide2 {background-image:url(images/bg2.jpg);}
         .slide_wrap .slide_c .slide3 {background-image:url(images/bg3.jpg);}
         .slide_wrap .slide_c .slide p {
             text-align:center; color:#fff;
             font-size:3rem; letter-spacing:-1px;
             position:relative; top:400px;
+            animation: txt 0.6s linear both;
         }
         /* class */
 
         /* animation */
 
+        @keyframes bg {
+            from {transform: scale(1);}
+            to {transform: scale(1.2);}
+        }
+        @keyframes txt {
+            from{transform: translateY(10px); opacity: 0;}
+            to{transform: translateY(0); opacity: 1;}
+        }
     </style>
     <script>
         window.onload=function(){
