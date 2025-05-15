@@ -9,10 +9,8 @@
     <style>
         #wrap {
             width:100%; /* height:100vh; */
-            background:url(images/bmw_bg.jpg);
+            background:url(images/bmw_bg.jpg) center 45% / cover; /* 구름 + 자동차 위치 설정 (배경 설정) */
             position:relative;
-            background-size:cover;
-            background-position: center;
         }
         header {
             width:1200px; margin:0 auto; padding:30px 0;
@@ -23,15 +21,22 @@
             border-bottom:1px solid rgba(255,255,255,0.2);
             width:80%; margin:0 auto; display:flex; justify-content:space-around;
         }
-        header nav a {padding:10px 0; position:relative;}
-        header nav a::after {
+        header nav a {color: #fff; padding:10px 0; position:relative;} /* 글씨 색상 화이트로 설정하기 */
+
+        header nav a::after { /* 마우스를 나갈때 생성되는 선택자이다 */
             content:''; display:block;
             width:100%; height:1px; background:#cae4ff;
-            position:absolute; bottom:-1px;
-            transform:scaleX(0); transition:all 0.8s;
+             position:absolute; bottom:-1px; /*-1쓴 이유는 ? 밑줄이 글씨에서 여백을 약간 주기 위해서(네비게이션 선 쪽으로 배치하고 싶으니깐 설정한것)  */
+            transform:scaleX(0);  /* 중심에서 커진다 (바로 transform이라고 생각하자) 밑에 밑줄 하려면 -> 옆으로 커지는거니깐 scaleX설정하면 된다*/
+            /* 길어지는 애니메이션 연장개념으로 display:none이 아닌 scale:0 설정 */
+            transition:transform 0.5s;/* 변경되는 속성에 대한 애니메이션 속성은 ? */
+            /* 애니메이션의 중심 방향을 바꾸고 싶다면? */
+            transform-origin:right; /*오른쪽에서 나오는 방향*/
         }
+
         header nav a:hover::after {
-            transform:scaleX(1); transition:all 0.8s;
+            transform:scaleX(1); /* 올렸을때만 생성되는 선택자이다 */
+            /* after는 위에서 x0 설정으로 선택이 안되기 때문에 부모 a에 마우스 올렸을때 after를 제어한다는 상태선택자를 만들어야 한다! */
         }
         main {position:relative; width:1400px; height:80vh; margin:0 auto;}
         main img {
